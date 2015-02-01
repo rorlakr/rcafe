@@ -4,6 +4,9 @@
     <div class='post'>
       <td><%= post.title %> <small>( <%= post.comments.size %> )</small></td>
       <div class='content'><%= simple_format post.content %></div>
+      <% if post.tag_list.size > 0 %>
+        <div class='tag_list'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
+      <% end %>
       <div>
           <%= link_to 'Show', [post.bulletin, post], class:'btn btn-default' %>
           <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-default' %>

@@ -6,6 +6,9 @@
       <div class='image'><%= link_to(image_tag(post.picture_url(:thumb)), [post.bulletin, post]) if post.picture? %></div>
       <div class='title'><%= post.title %></div>
       <div class='content'><%= post.content %></div>
+      <% if post.tag_list.size > 0 %>
+        <div class='tag_list'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
+      <% end %>
       <div class='actions'>
           <%= link_to fa_icon('eye'), [post.bulletin, post] %>
           <%= link_to fa_icon('edit'), edit_bulletin_post_path(post.bulletin, post) %>
