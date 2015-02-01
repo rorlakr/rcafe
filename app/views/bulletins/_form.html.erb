@@ -4,6 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :description, input_html: { rows: 5 } %>
+    <%= f.input :post_type, collection: [ ['게시판', 'bulletin'], ['블로그', 'blog'], ['갤러리', 'gallery'] ] %>
   </div>
 
   <div class="form-actions">

@@ -1,16 +1,20 @@
-<h2>Post Preview</h2>
+<h2><%= bulletin_name params[:bulletin_id] %></h2>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<table class='table'>
+<tr>
+  <th>Title</th>
+  <td><%= @post.title %></td>
+</tr>
+<tr>
+  <th>Content</th>
+  <td><%= @post.content %></td>
+</tr>
+<tr>
+  <th>Created at</th>
+  <td><%= @post.created_at %></td>
+</tr>
+</table>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<hr>
 
 <%= link_to 'Edit', edit_bulletin_post_path(@post.bulletin, @post), class: 'btn btn-default' %>
 <%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>

@@ -1,8 +1,7 @@
-<h2>Editing post</h2>
+<h2><%= bulletin_name params[:bulletin_id] %></h2>
 
 <%= render 'form' %>
 
 <hr>
-
 <%= link_to 'Show', [@post.bulletin, @post], class: 'btn btn-default' %>
 <%= link_to 'Back', bulletin_posts_path, class: 'btn btn-default' %>
