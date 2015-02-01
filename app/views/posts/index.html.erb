@@ -1,13 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h2>Listing posts</h2>
 
-<h1>Listing Posts</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
+      <th>Data actions</th>
     </tr>
   </thead>
 
@@ -15,15 +12,15 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', post, class: 'btn btn-default' %>
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: 'btn btn-default' %>
