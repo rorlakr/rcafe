@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'simple_form', '3.1.0'
+gem 'carrierwave'
+gem 'mini_magick'
+gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

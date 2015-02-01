@@ -13,3 +13,26 @@
     margin-bottom:.5em;
   }
 }
+
+input[type='file'] {
+  border: 1px solid #d1d1d1;
+  padding: .5em;
+  border-radius: .3em;
+  width: 100%;
+}
+
+.gallery {
+  overflow:auto;
+  .picture {
+    position:relative;
+    margin:1.5em 0;
+    .image img {
+      border: 1px solid #928c75;
+    }
+    .title {}
+    .content {}
+    .actions {
+      position:absolute;
+    }
+  }
+}

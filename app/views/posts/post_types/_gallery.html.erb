@@ -1,0 +1,19 @@
+<h2><%= bulletin_name params[:bulletin_id] %> <small><%= link_to '설정', edit_bulletin_path(params[:bulletin_id])%></small></h2>
+
+<div class='gallery'>
+<% @posts.each do | post | %>
+    <div class='col-lg-3 col-md-3 col-xs-4  picture'>
+      <div class='image'><%= link_to(image_tag(post.picture_url(:thumb)), [post.bulletin, post]) if post.picture? %></div>
+      <div class='title'><%= post.title %></div>
+      <div class='content'><%= post.content %></div>
+      <div class='actions'>
+          <%= link_to fa_icon('eye'), [post.bulletin, post] %>
+          <%= link_to fa_icon('edit'), edit_bulletin_post_path(post.bulletin, post) %>
+          <%= link_to fa_icon('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+<% end %>
+</div>
+<br>
+
+<%= link_to 'New Post', new_bulletin_post_path, class: 'btn btn-default' %>
