@@ -7,10 +7,33 @@ gem 'mini_magick'
 gem "font-awesome-rails"
 gem 'acts-as-taggable-on'
 
+# Use unicorn as the app server
+gem 'unicorn'
+
+# Use Capistrano for deployment
+gem 'capistrano-rails', group: :development
+
+# 추가할 젬
+gem 'capistrano-rbenv', group: :development
+gem 'capistrano-rbenv-install', group: :development
+gem 'capistrano-unicorn-nginx', group: :development
+gem 'capistrano-rails-console'
+gem 'capistrano-rails-collection'
+gem 'capistrano-rails-tail-log'
+
+group :production do
+  gem 'rb-readline'
+end
+
+# 데이터베이스 젬 그룹변경 및 추가
+gem 'sqlite3', group: :development
+gem 'mysql2', group: :production
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
